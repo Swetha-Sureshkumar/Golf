@@ -1,0 +1,72 @@
+﻿<Window x:Class="GolfUI.editPoints"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GolfUI"
+             mc:Ignorable="d" 
+            Title="Change Points"
+         
+        MinHeight="100"
+        MinWidth="300"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner" 
+        FocusManager.FocusedElement="{Binding ElementName=leftMarginTextBox}">
+     
+        <Grid Margin="10">
+        <Grid.Resources>
+            <!-- Default settings for controls -->
+            <Style TargetType="{x:Type Label}">
+                <Setter Property="Margin" Value="0,3,5,5" />
+                <Setter Property="Padding" Value="0,0,0,5" />
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="0,0,0,5" />
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Width" Value="70" />
+                <Setter Property="Height" Value="25" />
+                <Setter Property="Margin" Value="5,0,0,0" />
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0">X:</Label>
+        <TextBox Name="TextBoxX" Grid.Column="1" Grid.Row="0"  Text="{Binding NewPointX}" />
+            <Label Grid.Column="0" Grid.Row="1">Y:</Label>
+        <TextBox Name="TextBoxY" Grid.Column="1"  Grid.Row="1"  Text="{Binding NewPointY}" />
+
+
+            <!--<StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label FontSize="14"   FontWeight="Bold">X:</Label>
+                <TextBox Name="TextBoxX" VerticalAlignment="Center" Width="100" Text="{Binding NewPointXValue}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label FontSize="14"   FontWeight="Bold" >Y:</Label>
+                <TextBox Name="TextBoxY" VerticalAlignment="Center"   Text="{Binding NewPointYValue}"/>
+            </StackPanel>-->
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="okButton" Click="ButtonBase_OnClick" IsDefault="True">OK</Button>
+                <Button Name="cancelButton" IsCancel="True">Cancel</Button>
+            </StackPanel>
+            <!--<StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button     Content="Update Point" Click="ButtonBase_OnClick"/>
+                <Button Name="cancelButton" IsCancel="True">Cancel</Button>
+            </StackPanel>-->
+           
+
+        </Grid>
+   
+</Window>
